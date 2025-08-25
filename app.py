@@ -116,7 +116,7 @@ def create_app():
                 },
                 {
                     "title": "Startup Hub",
-                    "price": 89,
+                    "price": 109,
                     "category": "Business",
                     "img": "https://uicookies.com/wp-content/uploads/2018/08/tough-free-industrial-website-templates.jpg",
                     "features": ["Hero section", "Testimonials", "Contact form"],
