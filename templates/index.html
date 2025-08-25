@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %}WAIB — Websites that win customers{% endblock %}
+{% block content %}
+<section class="py-5 bg-gradient position-relative overflow-hidden">
+  <div class="container py-5">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6" style="color: rgba(255,255,255,0.95);">
+        <h1 class="display-5 fw-bold mb-3">We build websites that <span class="text-primary">win customers.</span></h1>
+        <p class="lead text-secondary">From landing pages to full-stack platforms — WAIB ships fast, responsive, SEO-friendly sites with pixel-perfect polish.</p>
+        <div class="d-flex gap-3 mt-4">
+          <a href="{{ url_for('templates_page') }}" class="btn btn-primary btn-lg d-inline-flex align-items-center justify-content-center">Browse Templates</a>
+          <a href="{{ url_for('contact') }}" class="btn btn-outline-secondary btn-lg">Get a Quote</a>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center" data-aos="fade-left">
+        <img src="https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/64b57ab9c0780b9b6f92b20e_-kEGwpdw8dvhO4fredav7_qekdRINzM9nJjHQ9VT6HzBU6i_xqVVnmARTynOWQgkGrTi0-yHIzD5W3glpcC2DmtUkuvJLjFhgDYkXkhjU5eIm3GrzvE-Kats-MG-rwnatns2Qy_52WhsSv6bkv2NQlw.jpeg" alt="WAIB Hero" class="img-fluid rounded-4 shadow-sm float-animation" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row text-center g-4">
+      <div class="col-6 col-lg-3" data-aos="zoom-in"><i class="fa-solid fa-bolt fa-2x mb-2"></i><div class="fw-semibold">Lightning Fast</div></div>
+      <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100"><i class="fa-solid fa-mobile-screen-button fa-2x mb-2"></i><div class="fw-semibold">Responsive</div></div>
+      <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200"><i class="fa-solid fa-shield-halved fa-2x mb-2"></i><div class="fw-semibold">Secure</div></div>
+      <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300"><i class="fa-solid fa-magnifying-glass-chart fa-2x mb-2"></i><div class="fw-semibold">SEO Optimized</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-body-tertiary">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      <h2 class="h3 m-0">Featured Templates</h2>
+      <a href="{{ url_for('templates_page') }}" class="btn btn-sm btn-outline-primary">See all</a>
+    </div>
+    <div class="row g-4">
+      {% for t in showcase %}
+      <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+        <div class="card h-100 shadow-sm hover-lift">
+          <img src="{{ t.img }}" class="card-img-top" alt="{{ t.title }}" />
+          <div class="card-body d-flex flex-column">
+            <h3 class="h5">{{ t.title }}</h3>
+            <ul class="small text-secondary mb-3">
+              {% for f in t.features %}
+              <li>{{ f }}</li>
+              {% endfor %}
+            </ul>
+            <div class="mt-auto d-flex align-items-center justify-content-between">
+              <span class="badge text-bg-dark">₹{{ t.price * 85 }} INR</span>
+              <a href="{{ url_for('templates_page') }}" class="btn btn-outline-secondary btn-sm">Preview</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container text-center" data-aos="fade-up">
+    <h2 class="h3 mb-3">Ready to launch your next website?</h2>
+    <p class="text-secondary mb-4">Tell us about your idea — we'll propose the fastest, most affordable path to production.</p>
+    <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">Contact WAIB</a>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}Templates — WAIB{% endblock %}
+{% block content %}
+<section class="py-5">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4" data-aos="fade-up">
+      <h1 class="h3 m-0">Templates</h1>
+      <div class="btn-group" role="group" aria-label="Price filters">
+        <a class="btn btn-outline-secondary {% if active_price=='all' %}active{% endif %}" href="{{ url_for('templates_page') }}">All</a>
+        <a class="btn btn-outline-secondary {% if active_price=='0-60' %}active{% endif %}" href="{{ url_for('templates_page', price='0-60') }}">₹0–₹5,100</a>
+        <a class="btn btn-outline-secondary {% if active_price=='60-100' %}active{% endif %}" href="{{ url_for('templates_page', price='60-100') }}">₹5,100–₹8,500</a>
+        <a class="btn btn-outline-secondary {% if active_price=='100+' %}active{% endif %}" href="{{ url_for('templates_page', price='100+') }}">₹8,500+</a>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      {% for t in items %}
+      <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+        <div class="card h-100 shadow-sm hover-lift">
+          <img src="{{ t.img }}" class="card-img-top" alt="{{ t.title }}" />
+          <div class="card-body d-flex flex-column">
+            <h3 class="h5">{{ t.title }}</h3>
+            <p class="text-secondary small">Category: {{ t.category }}</p>
+            <ul class="small text-secondary mb-3">
+              {% for f in t.features %}
+              <li>{{ f }}</li>
+              {% endfor %}
+            </ul>
+            <div class="mt-auto d-flex align-items-center justify-content-between">
+              <span class="badge text-bg-dark">₹{{ t.price * 85 }} INR</span>
+              <a href="#" class="btn btn-primary btn-sm ms-lg-2 d-inline-flex align-items-center justify-content-center">Preview</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+      {% if not items %}
+      <div class="col-12">
+        <div class="alert alert-warning">No templates found for this price range.</div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}

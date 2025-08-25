@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}FAQ — WAIB{% endblock %}
+{% block content %}
+<section class="py-5 bg-body-tertiary">
+  <div class="container" data-aos="fade-up">
+    <h1 class="h3 mb-4">Frequently Asked Questions</h1>
+    <div class="accordion" id="faq">
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1">How fast can you deliver?</button></h2>
+        <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faq">
+          <div class="accordion-body">Most landing pages in 4–7 days; full sites 2–4 weeks depending on scope.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">Do you handle hosting & domains?</button></h2>
+        <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faq">
+          <div class="accordion-body">Yes. We can set up hosting, SSL, domains, and CI/CD for you.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">What about maintenance?</button></h2>
+        <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faq">
+          <div class="accordion-body">We offer affordable care plans — updates, backups, monitoring and fixes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Contact — WAIB{% endblock %}
+{% block content %}
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-6" data-aos="fade-right">
+        <h1 class="h3 mb-3">Let's talk about your project</h1>
+        <p class="text-secondary">Tell us a bit about what you're trying to build and your ideal timeline/budget.</p>
+        {% if not user %}
+        <form method="post" class="mt-3" novalidate>
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" name="name" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea name="message" rows="5" class="form-control" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+        {% else %}
+        <form method="post" class="mt-3" novalidate>
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea name="message" rows="5" class="form-control" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+        {% endif %}
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h2 class="h5">Why WAIB?</h2>
+            <ul class="text-secondary mb-0">
+              <li>Clear milestones & weekly updates</li>
+              <li>Modern stack & best practices</li>
+              <li>Accessible, SEO-first approach</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

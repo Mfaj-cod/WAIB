@@ -1,0 +1,79 @@
+:root{
+  --bg: #0b0f14;
+  --bg-soft: #121821;
+  --card: #121826;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #0e1116;
+}
+
+.bg-gradient{
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(91,140,255,.15), rgba(0,0,0,0)),
+              radial-gradient(1200px 600px at 90% 20%, rgba(123,255,211,.12), rgba(0,0,0,0));
+}
+
+/* Simple floating animation for hero image */
+.float-animation{
+  animation: floaty 6s ease-in-out infinite;
+}
+@keyframes floaty{
+  0%,100%{ transform: translateY(0) }
+  50%{ transform: translateY(-8px) }
+}
+
+/* Card hover lift */
+.hover-lift{ transition: transform .2s ease, box-shadow .2s ease; }
+.hover-lift:hover{ transform: translateY(-4px); box-shadow: 0 .75rem 2rem rgba(0,0,0,.15); }
+
+/* Footer year */
+footer #year{ opacity:.9 }
+
+/* Flash container spacing on mobile */
+.flash-wrapper{ width:min(720px, 92vw); }
+
+.hero h1 {
+  color: rgba(255, 255, 255, 0.95); /* almost white, 95% opacity */
+}
+.hero h1 span {
+  color: #0d6efd; /* keep the blue highlight */
+}
+
+
+/* Feature section background */
+section.py-5 {
+  background: linear-gradient(135deg, #0d1117, #1a1f29); /* dark gradient */
+  color: #ffffff; /* make text visible */
+}
+
+/* Each feature item */
+section.py-5 .col-lg-3,
+section.py-5 .col-6 {
+  background: rgba(255, 255, 255, 0.05); /* subtle glass effect */
+  /* border-radius: 1rem; */
+  padding: 2rem 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+section.py-5 .col-lg-3:hover,
+section.py-5 .col-6:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Icons */
+section.py-5 i {
+  color: #0d6efd; /* Bootstrap primary blue */
+  margin-bottom: 0.75rem;
+  text-shadow: 0 0 10px rgba(13, 110, 253, 0.6);
+}
+
+/* Titles */
+section.py-5 .fw-semibold {
+  font-size: 1.1rem;
+  color: #f8f9fa;
+}
