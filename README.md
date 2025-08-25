@@ -1,19 +1,26 @@
-# WAIB — Flask + SQLite
+# 🌐 WAIB – We Are Into Building Websites
 
-Production-ready starter for WAIB with a real SQLite database using SQLAlchemy.
+WAIB is a **website building company platform** built with **Flask, Bootstrap, and SQLite**.  
+It provides users with a clean, responsive, and animated interface to explore our services, templates, and get in touch.  
 
-## Quickstart
-1. (Optional) Create a virtualenv
-2. `pip install -r requirements.txt`
-3. Copy `.env.example` → `.env` and set a strong `SECRET_KEY` (and optionally `SQLITE_PATH`).
-4. Run the app:
-   ```bash
-   flask --app app run --debug
-   ```
-5. Open http://127.0.0.1:5000
+---
 
-### Notes
-- Database: SQLite (file path from `SQLITE_PATH` or default `waib.db`).
-- Users: password hashing via Werkzeug.
-- Contact messages stored in DB.
-- Templates catalog stored in DB and auto-seeded on first run.
+## 🚀 Features
+
+- **Landing Page** – Modern, animated, and fully responsive homepage  
+- **Authentication** – User registration & login system with SQLite  
+- **About Page** – Learn more about WAIB  
+- **FAQ Page** – Common questions answered  
+- **Templates Page** – Browse professional website templates with pricing  
+- **Contact Page** – Contact form to reach us  
+- **Responsive Design** – Works seamlessly across desktop and mobile  
+- **Animations** – Smooth AOS animations for engaging user experience  
+
+---
+
+## 🛠️ Tech Stack
+
+- **Backend:** Flask (Python)  
+- **Frontend:** HTML, CSS, Bootstrap, AOS.js  
+- **Database:** SQLite  
+- **Authentication:** Flask-Login  
