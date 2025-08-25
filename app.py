@@ -239,6 +239,25 @@ def create_app():
                 flash("Passwords do not match.", "danger")
             elif User.query.filter((User.username == username) | (User.email == email)).first():
                 flash("Username or email already exists.", "warning")
+            
+
+            domain = email.split('@')[-1]
+            if domain not in ['gmail.com', 'hotmail.com', 'yahoo.com', 'outlook.com']:
+                flash("Please use a valid email address.", "error")
+                return redirect(url_for("register"))
+
+            elif len(password) < 6:
+                flash("Password must be at least 6 characters long.", "error")
+                return redirect(url_for("register"))
+            elif not any(char.isdigit() for char in password):
+                flash("Password must contain at least one number.", "error")
+                return redirect(url_for("register"))
+            elif not any(char.isalpha() for char in password):
+                flash("Password must contain at least one letter.", "error")
+                return redirect(url_for("register"))
+            elif not any(char in "!@#$%^&*()-+" for char in password):
+                flash("Password must contain at least one special character.", "error")
+                return redirect(url_for("register"))
             else:
                 u = User(username=username, email=email)
                 u.set_password(password)
