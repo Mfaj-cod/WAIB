@@ -78,9 +78,17 @@ section.py-5 .fw-semibold {
   color: #f8f9fa;
 }
 
+/* Hide on desktop/laptop */
+.bottom-nav {
+  display: none;
+}
 
 /* Show only on screens up to 768px (tablet & mobile) */
 @media (max-width: 768px) {
+  .bottom-nav{
+    display: flex;
+  }
+
   .nav {
     position: absolute;
     top: 100%;
