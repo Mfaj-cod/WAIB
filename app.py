@@ -197,7 +197,7 @@ def create_app():
                             msg=f"Subject: New Contact Message\n\nFrom: {name} <{email}>\n\n{message}"
                         )
                 except Exception as e:
-                    flash(f"Failed to send info email: {e}", "error")
+                    flash(f"Failed to send info email: {e}", "danger")
 
                 db.session.add(cm)
                 db.session.commit()
@@ -243,20 +243,20 @@ def create_app():
 
             domain = email.split('@')[-1]
             if domain not in ['gmail.com', 'hotmail.com', 'yahoo.com', 'outlook.com']:
-                flash("Please use a valid email address.", "error")
+                flash("Please use a valid email address.", "danger")
                 return redirect(url_for("register"))
 
             elif len(password) < 6:
-                flash("Password must be at least 6 characters long.", "error")
+                flash("Password must be at least 6 characters long.", "danger")
                 return redirect(url_for("register"))
             elif not any(char.isdigit() for char in password):
-                flash("Password must contain at least one number.", "error")
+                flash("Password must contain at least one number.", "danger")
                 return redirect(url_for("register"))
             elif not any(char.isalpha() for char in password):
-                flash("Password must contain at least one letter.", "error")
+                flash("Password must contain at least one letter.", "danger")
                 return redirect(url_for("register"))
             elif not any(char in "!@#$%^&*()-+" for char in password):
-                flash("Password must contain at least one special character.", "error")
+                flash("Password must contain at least one special character.", "danger")
                 return redirect(url_for("register"))
             else:
                 u = User(username=username, email=email)
