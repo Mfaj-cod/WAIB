@@ -114,6 +114,13 @@ def create_app():
                     "img": "https://uicookies.com/wp-content/uploads/2018/06/dorne-free-magazine-website-templates.jpg",
                     "features": ["Agenda", "Speakers", "Ticket CTA"],
                 },
+                {
+                    "title": "Startup Hub",
+                    "price": 89,
+                    "category": "Business",
+                    "img": "https://uicookies.com/wp-content/uploads/2018/08/tough-free-industrial-website-templates.jpg",
+                    "features": ["Hero section", "Testimonials", "Contact form"],
+                }
             ]
             for s in seed:
                 t = Template(
