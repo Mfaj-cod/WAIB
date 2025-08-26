@@ -12,7 +12,7 @@ load_dotenv()
 
 def create_app():
     app = Flask(__name__)
-    app.secret_key = os.getenv("SECRET_KEY", "dev-secret-change-me")
+    app.secret_key = os.getenv("SECRET_KEY")
 
     db_path = os.getenv("SQLITE_PATH", "waib.db")
     app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{db_path}"
