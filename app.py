@@ -196,12 +196,13 @@ def create_app():
                             to_addrs=os.getenv("COMPANY_EMAIL"),
                             msg=f"Subject: New Contact Message\n\nFrom: {name} <{email}>\n\n{message}"
                         )
+                        flash("Thanks! Your message has been received. We'll get back to you soon.", "success")
                 except Exception as e:
                     flash(f"Failed to send info email: {e}", "danger")
 
                 db.session.add(cm)
                 db.session.commit()
-                flash("Thanks! Your message has been received. We'll get back to you soon.", "success")
+                
                 return redirect(url_for("contact"))
         return render_template("contact.html", user=current_user())
 
