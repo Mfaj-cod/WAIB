@@ -8,7 +8,6 @@ It provides users with a clean, responsive, and animated interface to explore ou
 ## 🚀 Features
 
 - **Landing Page** – Modern, animated, and fully responsive homepage  
-- **Authentication** – User registration & login system with SQLite  
 - **About Page** – Learn more about WAIB  
 - **FAQ Page** – Common questions answered  
 - **Templates Page** – Browse professional website templates with pricing  
