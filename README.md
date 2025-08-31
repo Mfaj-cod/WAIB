@@ -22,4 +22,3 @@ It provides users with a clean, responsive, and animated interface to explore ou
 - **Backend:** Flask (Python)  
 - **Frontend:** HTML, CSS, Bootstrap, AOS.js  
 - **Database:** SQLite  
-- **Authentication:** Flask-Login  
