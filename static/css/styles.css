@@ -175,5 +175,10 @@ section.py-5 .fw-semibold {
   .grid-3{grid-template-columns:1fr}
 }
 
-
+.logo {
+  background-size: cover;
+  height: 25;
+  width: 52;
+  overflow: hidden;
+}
 
